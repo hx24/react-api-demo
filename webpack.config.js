@@ -15,14 +15,14 @@ module.exports = {
             loader: 'babel-loader'
           }
         ],
-        exclude: '/node_modules/'
+        include: [path.resolve(__dirname, 'src')]
       }
     ]
   },
   output: {
     //  输出文件
-    path: __dirname + '/src', // 输出文件路径
-    filename: 'bundle.js' // 输出文件名
+    path: path.resolve(__dirname, 'dist'), // 输出文件路径
+    filename: '[name].bundle.js', // 输出文件名
   },
   plugins: [
     new HtmlWebpackPlugin({
