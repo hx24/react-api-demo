@@ -1,16 +1,17 @@
 import React from 'react'
 import globalContext from './globalContext'
-import Home from './components/Home'
-import Info from './components/Info'
-import Suspense from './components/Suspense'
-import Hoosk from './components/Hoosk'
-import ReactChildren from './components/ReactChildren'
-import Test from './components/Test'
-import Event from './components/Event'
-import Key from './components/Key'
-import SetState from './components/SetState'
-import Portal from './components/Portal'
-import AsyncComponent from './components/AsyncComponent'
+// import Home from './components/Home'
+// import Info from './components/Info'
+// import Suspense from './components/Suspense'
+// import Hoosk from './components/Hoosk'
+// import ReactChildren from './components/ReactChildren'
+// import Test from './components/Test'
+// import Event from './components/Event'
+// import Key from './components/Key'
+// import SetState from './components/SetState'
+// import Portal from './components/Portal'
+// import AsyncComponent from './components/AsyncComponent'
+import './components/VDOM'
 
 const globalConfig = {
   name: 'hx',
@@ -36,17 +37,18 @@ export default class extends React.Component {
   render() {
     return (
       <globalContext.Provider value={this.state.test}>
-        {/* <Home />
-        <Info />
-        <Suspense />
-        <Hoosk />
-        <ReactChildren /> */}
-        {/* <Test/> */}
+        {/* <Home /> */}
+        {/* <Info /> */}
+        {/* <Suspense /> */}
+        {/* <Hoosk /> */}
+        {/* <ReactChildren /> */}
+        {/* <Test /> */}
         {/* <Event/> */}
         {/* <Key /> */}
         {/* <SetState /> */}
         {/* <Portal /> */}
-        <AsyncComponent/>
+        {/* <AsyncComponent/> */}
+        {/* <VDOM /> */}
       </globalContext.Provider>
     )
   }

@@ -1,27 +1,50 @@
 import React, { Component } from 'react'
 
-export default class extends Component {
+
+class Test extends Component {
   state = {
     count: 0,
   }
 
-  componentDidMount() {
-    this.setState({ count: this.state.count + 1 })
-    console.log(this.state.count)
-    this.setState({ count: this.state.count + 1 })
-    console.log(this.state.count)
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { count } = nextProps;
+    console.log('zhixing', count)
+    // 当传入的type发生变化的时候，更新state
+    if (count !== prevState.count) {
+      return {
+        count,
+      };
+    }
+    // 否则，对于state不进行任何操作
+    return null;
+  }
 
-    setTimeout(() => {
-      this.setState({ count: this.state.count + 1 })
-      console.log(this.state.count)
-    }, 0)
-    setTimeout(() => {
-      this.setState({ count: this.state.count + 1 })
-      console.log(this.state.count)
-    }, 0)
+  componentDidMount() {
   }
 
   render() {
     return <div>{this.state.count}</div>
   }
 }
+
+export default class Wrapper extends Component {
+  state = {
+    count: 1
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={() => {
+          this.setState({
+            count: Math.random()
+          })
+        }}>
+          改变count
+        </button>
+        <Test count={this.state.count} />
+      </div>
+    )
+  }
+}
+
